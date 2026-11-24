@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f6fa">
+  <title>My Tasks — Personal Todo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="My Tasks home"><span class="brand-mark">✓</span> mytasks</a>
+      <span class="local-label"><span class="status-dot"></span> Saved on this device</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow" id="today-label">YOUR DAY</p>
+      <h1>Make today<br><span>count.</span></h1>
+      <p class="subtitle">A little progress each day adds up.</p>
+    </section>
+
+    <section class="summary" aria-label="Task summary">
+      <article class="stat-card"><span class="stat-label">All tasks</span><strong id="total-count">0</strong></article>
+      <article class="stat-card"><span class="stat-label">Pending</span><strong id="pending-count">0</strong></article>
+      <article class="stat-card"><span class="stat-label">Completed</span><strong id="completed-count">0</strong></article>
+    </section>
+
+    <section class="task-panel">
+      <form id="task-form" class="add-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input id="task-input" type="text" maxlength="120" placeholder="What needs to get done?" autocomplete="off" required>
+        <button type="submit">Add task <span aria-hidden="true">＋</span></button>
+      </form>
+
+      <div class="list-heading">
+        <h2>Your tasks</h2>
+        <span id="task-count-label">0 tasks</span>
+      </div>
+
+      <nav class="filters" aria-label="Filter tasks">
+        <button class="filter active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="pending">Pending</button>
+        <button class="filter" type="button" data-filter="completed">Completed</button>
+      </nav>
+
+      <ul id="task-list" class="task-list"></ul>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">✦</div>
+        <h3>Nothing here yet</h3>
+        <p>Add your first task and get started.</p>
+      </div>
+      <footer class="list-footer">
+        <span id="remaining-label">You're all caught up.</span>
+        <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+      </footer>
+    </section>
+
+    <p class="privacy-note">Your tasks are stored in this browser only. No account or server needed.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
